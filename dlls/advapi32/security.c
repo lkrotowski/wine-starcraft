@@ -1269,11 +1269,14 @@ DWORD WINAPI BuildSecurityDescriptorW(
     IN OUT PULONG lpdwBufferLength,
     OUT PSECURITY_DESCRIPTOR* pNewSD)
 { 
+    PACL pDacl;
+
     FIXME("(%p,%p,%d,%p,%d,%p,%p,%p,%p) stub!\n",pOwner,pGroup,
           cCountOfAccessEntries,pListOfAccessEntries,cCountOfAuditEntries,
           pListofAuditEntries,pOldSD,lpdwBufferLength,pNewSD);
  
-    return ERROR_CALL_NOT_IMPLEMENTED;
+    return GetSecurityInfo( GetCurrentProcess(), SE_KERNEL_OBJECT, DACL_SECURITY_INFORMATION,
+                            NULL, NULL, &pDacl, NULL, pNewSD);
 } 
 
 /******************************************************************************
