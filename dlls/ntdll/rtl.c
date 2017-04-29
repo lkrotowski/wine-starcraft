@@ -1023,7 +1023,7 @@ static DWORD_PTR get_pointer_obfuscator( void )
 
     if (!pointer_obfuscator)
     {
-        ULONG seed = NtGetTickCount();
+        ULONG seed = __wine_NtGetTickCount();
         ULONG_PTR rand;
 
         /* generate a random value for the obfuscator */

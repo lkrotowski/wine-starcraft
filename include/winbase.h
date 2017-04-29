@@ -2201,6 +2201,7 @@ WINBASEAPI DWORD       WINAPI GetTempPathW(DWORD,LPWSTR);
 WINBASEAPI DWORD       WINAPI GetThreadId(HANDLE);
 WINBASEAPI BOOL        WINAPI GetThreadIOPendingFlag(HANDLE,PBOOL);
 WINBASEAPI DWORD       WINAPI GetTickCount(void);
+#define                       GetTickCount64 __wine_GetTickCount64
 WINBASEAPI ULONGLONG   WINAPI GetTickCount64(void);
 WINBASEAPI DWORD       WINAPI GetTimeZoneInformation(LPTIME_ZONE_INFORMATION);
 WINBASEAPI BOOL        WINAPI GetThreadContext(HANDLE,CONTEXT *);

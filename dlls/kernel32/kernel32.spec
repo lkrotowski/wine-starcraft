@@ -857,7 +857,7 @@
 @ stdcall GetThreadSelectorEntry(long long ptr)
 @ stdcall GetThreadTimes(long ptr ptr ptr ptr)
 @ stdcall GetTickCount()
-@ stdcall -ret64 GetTickCount64()
+@ stdcall -ret64 __wine_GetTickCount64()
 @ stdcall GetTimeFormatA(long long ptr str ptr long)
 @ stdcall GetTimeFormatEx(wstr long ptr wstr ptr long)
 @ stdcall GetTimeFormatW(long long ptr wstr ptr long)

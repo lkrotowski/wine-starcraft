@@ -321,7 +321,7 @@ static inline void RELAY_PrintArgs( const INT_PTR *args, int nb_args, unsigned i
 
 static void print_timestamp(void)
 {
-    ULONG ticks = NtGetTickCount();
+    ULONG ticks = __wine_NtGetTickCount();
     DPRINTF( "%3u.%03u:", ticks / 1000, ticks % 1000 );
 }
 

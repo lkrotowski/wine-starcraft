@@ -1672,7 +1672,7 @@ static void set_security_cookie( void *module, SIZE_T len )
     cookie = (ULONG_PTR *)loadcfg->SecurityCookie;
     TRACE( "initializing security cookie %p\n", cookie );
 
-    if (!seed) seed = NtGetTickCount() ^ GetCurrentProcessId();
+    if (!seed) seed = __wine_NtGetTickCount() ^ GetCurrentProcessId();
     for (;;)
     {
         if (*cookie == DEFAULT_SECURITY_COOKIE_16)

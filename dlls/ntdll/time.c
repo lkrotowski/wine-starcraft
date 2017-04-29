@@ -470,7 +470,7 @@ NTSTATUS WINAPI NtQuerySystemTime( PLARGE_INTEGER Time )
 
     user_shared_data->SystemTime.LowPart = Time->u.LowPart;
     user_shared_data->SystemTime.High1Time = user_shared_data->SystemTime.High2Time = Time->u.HighPart;
-    user_shared_data->u.TickCountQuad = NtGetTickCount();
+    user_shared_data->u.TickCountQuad = __wine_NtGetTickCount();
     user_shared_data->u.TickCount.High2Time = user_shared_data->u.TickCount.High1Time;
     user_shared_data->TickCountLowDeprecated = user_shared_data->u.TickCount.LowPart;
     user_shared_data->TickCountMultiplier = 1 << 24;
@@ -501,7 +501,7 @@ NTSTATUS WINAPI NtQueryPerformanceCounter( LARGE_INTEGER *counter, LARGE_INTEGER
  * NtGetTickCount   (NTDLL.@)
  * ZwGetTickCount   (NTDLL.@)
  */
-ULONG WINAPI NtGetTickCount(void)
+ULONG WINAPI __wine_NtGetTickCount(void)
 {
     return monotonic_counter() / TICKSPERMSEC;
 }

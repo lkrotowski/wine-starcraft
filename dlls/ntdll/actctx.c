@@ -3807,7 +3807,7 @@ static NTSTATUS build_comserver_section(ACTIVATION_CONTEXT* actctx, struct guids
     module_offset = sizeof(*header);
     data_offset = header->index_offset + 2*class_count*sizeof(*index);
 
-    seed = NtGetTickCount();
+    seed = __wine_NtGetTickCount();
     for (i = 0; i < actctx->num_assemblies; i++)
     {
         struct assembly *assembly = &actctx->assemblies[i];

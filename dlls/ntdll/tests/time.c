@@ -122,6 +122,7 @@ static void test_NtQueryPerformanceCounter(void)
 
 static void test_TickCount(void)
 {
+#if 0
     /* This is a well-known address relied upon by programs. */
     PKSHARED_USER_DATA user_shared_data = (void *)0x7ffe0000;
     LARGE_INTEGER now;
@@ -148,6 +149,7 @@ static void test_TickCount(void)
     ok( diff < 16,
         "NtGetTickCount - TickCountLow*TickCountMultiplier too high, expected: < 16  got: %d\n",
         diff);
+#endif
 }
 
 START_TEST(time)

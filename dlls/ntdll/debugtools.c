@@ -168,7 +168,7 @@ static int NTDLL_dbg_vlog( enum __wine_debug_class cls, struct __wine_debug_chan
     {
         if (TRACE_ON(timestamp))
         {
-            ULONG ticks = NtGetTickCount();
+            ULONG ticks = __wine_NtGetTickCount();
             ret = wine_dbg_printf( "%3u.%03u:", ticks / 1000, ticks % 1000 );
         }
         if (TRACE_ON(pid))

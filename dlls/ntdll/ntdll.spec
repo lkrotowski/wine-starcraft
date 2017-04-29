@@ -188,7 +188,7 @@
 @ stdcall NtGetCurrentProcessorNumber()
 # @ stub NtGetDevicePowerState
 @ stub NtGetPlugPlayEvent
-@ stdcall NtGetTickCount()
+@ stdcall __wine_NtGetTickCount()
 @ stdcall NtGetWriteWatch(long long ptr long ptr ptr ptr)
 @ stdcall NtImpersonateAnonymousToken(long)
 @ stub NtImpersonateClientOfPort
@@ -1114,7 +1114,7 @@
 @ stdcall -private ZwGetCurrentProcessorNumber() NtGetCurrentProcessorNumber
 # @ stub ZwGetDevicePowerState
 @ stub ZwGetPlugPlayEvent
-@ stdcall -private ZwGetTickCount() NtGetTickCount
+# @ stdcall -private ZwGetTickCount() NtGetTickCount
 @ stdcall -private ZwGetWriteWatch(long long ptr long ptr ptr ptr) NtGetWriteWatch
 @ stdcall -private ZwImpersonateAnonymousToken(long) NtImpersonateAnonymousToken
 @ stub ZwImpersonateClientOfPort
